@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.transaction.mapper.UserMapper" >
+	<insert id="insertUser" useGeneratedKeys="true" keyProperty="id" parameterType="user">
+		insert into user (id,name, password) values (#{id},#{name},#{password});
+	</insert>
+	<select id="getUserById" resultType="com.transaction.entity.User">
+		select * from user where id = #{_};
+	</select>
+</mapper>
